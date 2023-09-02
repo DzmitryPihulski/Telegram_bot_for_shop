@@ -64,12 +64,13 @@ def view_all_products(message):
 
 #Command for making orders in shop
 @bot.message_handler(commands=['make_order'])
-def make_order(message):
+def make_orderer(message):
     text = "Choose item for order."
     bot.send_message(message.chat.id, text,reply_markup=gen_markup(functions_for_db.get_names_of_awailable_products()))
-    @bot.callback_query_handler(func=lambda call: True)
-    def callback_query(call):
-        make_order(call)
+
+@bot.callback_query_handler(func=lambda call: True)
+def process_callback_1(querry):
+    make_order(querry)
 
 #Get admin status(Everyone could get admin status with password)
 @bot.message_handler(commands=['admin'])
@@ -200,17 +201,14 @@ def change_awailable_of_product(message):
 
 #Orders(to help customers make new orders)
 def make_order(message):
-    #rewriting zodiac sign
     product_name = message.data
-    #Choosing date
     text = "How many of these do you want? Give me the answer in that format: number. For example: 10"
     sent_msg = bot.send_message(message.from_user.id, text, parse_mode="Markdown")
-
     #Register the answer and going to the next function
     bot.register_next_step_handler(sent_msg, make_order_2, str(product_name))
+    
 def make_order_2(amount, product_name):
     amount_data = amount.text
-    #Choosing date
     text = "Where you want me to ship it"
     sent_msg = bot.send_message(amount.from_user.id, text, parse_mode="Markdown")
     bot.register_next_step_handler(sent_msg, make_order_3, [product_name,int(amount_data)])
