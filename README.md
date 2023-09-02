@@ -1,7 +1,7 @@
-# Shop bot with MySQL server database
+# Shop bot with MS SQL server database
 Hello everyone. This is my first bot for Telegram.<br>
 I made it in March 2023 to automate process of Shop management. <br>
-It was made without asynchronous libraries and frameworks, but with the help of MySQL server.<br>
+It was made without asynchronous libraries and frameworks, but with the help of MS SQL server.<br>
 All passwords were changed into nonsense for safety proposes.<br>
 That is simple, not commercial project.<br>
 

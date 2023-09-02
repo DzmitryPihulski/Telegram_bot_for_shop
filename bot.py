@@ -41,7 +41,7 @@ def send_welcome(message):
 #Say help
 @bot.message_handler(commands=['help'])
 def greetings(message):
-    text="""✋Hello, My name is ShopBot. I am the project of @dimapiggy . I was written on python🐍 with the help of MySql🦈 server. This are my commands:\n \n
+    text="""✋Hello, My name is ShopBot. I am the project of @dimapiggy . I was written on python🐍 with the help of MS SQL server. This are my commands:\n \n
 
     /id - 🪪you can get information about yourself. I am using this information in my Database.\n \n
 
