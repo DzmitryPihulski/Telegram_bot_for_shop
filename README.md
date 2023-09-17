@@ -41,5 +41,6 @@ Project is created with the help of these libraries in Python 3.11.4:
 	
 ## Setup
 To run this project, install it locally using git clone.<br>
+You also will need to install MS SQL Server 17 version.<br>
 After that, please enter your BOT TOKEN in passwords file, because mine is just a demonstration.<br>
 Please enjoy!
